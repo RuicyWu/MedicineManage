@@ -11,6 +11,7 @@ ydgk\group10\wuzu\pojo\TbUserExample$GeneratedCriteria.class
 ydgk\group10\wuzu\pojo\Good.class
 ydgk\group10\wuzu\pojo\TbSelldetailExample.class
 ydgk\group10\wuzu\mapper\TbSelldetailMapper.class
+ydgk\group10\wuzu\MedicineManage\controller\TestC.class
 ydgk\group10\wuzu\utils\Page.class
 ydgk\group10\wuzu\pojo\TbCategoryExample$Criterion.class
 ydgk\group10\wuzu\pojo\TbCategory.class
@@ -19,7 +20,6 @@ ydgk\group10\wuzu\pojo\TbUserExample$Criterion.class
 ydgk\group10\wuzu\pojo\TBookExample$Criterion.class
 ydgk\group10\wuzu\pojo\TbSelldetailExample$Criteria.class
 ydgk\group10\wuzu\pojo\TAdminExample$Criteria.class
-ydgk\group10\wuzu\MedicineManage\controller\Test.class
 ydgk\group10\wuzu\pojo\TbUserExample$Criteria.class
 ydgk\group10\wuzu\pojo\TAdminExample.class
 ydgk\group10\wuzu\pojo\TbMedicineExample$Criteria.class
