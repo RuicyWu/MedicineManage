@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+<!--引入属性文件-->
+    <context:property-placeholder location="classpath:jdbc.properties"/>
+<!--    配置包扫描-->
+    <context:component-scan base-package="ydgk.group10.wuzu.mapper"/>
+<!--    配置数据源-->
+    <bean id="datasource" class="com.alibaba.druid.pool.DruidDataSource">
+        <property name="driverClassName" value="${jdbc.driver}"></property>
+        <property name="url" value="${jdbc.url}"/>
+        <property name="username" value="${jdbc.username}"/>
+        <property name="password" value="${jdbc.password}"/>
+    </bean>
+<!--    配置会话工厂对象-->
+    <bean id="sqlSessionFactoryBean" class="org.mybatis.spring.SqlSessionFactoryBean">
+      <property name="dataSource" ref="datasource"></property>
+        <property name="configLocation" value="classpath:mybatis.xml"></property>
+        <property name="typeAliasesPackage" value="ydgk.group10.wuzu.pojo"></property>
+    </bean>
+<!--配置扫描mapper的bean-->
+    <bean  class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="basePackage" value="ydgk.group10.wuzu.mapper"></property>
+        <property name="sqlSessionFactoryBeanName" value="sqlSessionFactoryBean"></property>
+    </bean>
+</beans>
